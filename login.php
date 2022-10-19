@@ -1,14 +1,16 @@
 <?php
-
+session_start();
 include('connection.php');
 include('function.inc.php');
-
+$msg = '';
+  
 if (isset($_POST['submit'])) {
     $username = get_safe_value($_POST['username']);
     $password = get_safe_value($_POST['password']);
 
-    $sql = "select * from admin where username='$username' and password='$password'";
-    $res = mysqli_query($con, $sql);
+    // prx($_POST);
+    $sql = "SELECT * FROM `admin_profile` WHERE username='$username' and password='$password'";
+     $res = mysqli_query($conn, $sql);
     if (mysqli_num_rows($res) > 0) {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['IS_LOGIN'] = 'yes';
@@ -37,7 +39,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-     <div class="container text-center">
+    <div class="container text-center">
         <h1 class="py-4">Login </h1>
         <hr>
     </div>
@@ -47,12 +49,12 @@ if (isset($_POST['submit'])) {
                 <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username / Email</label>
-                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your Uwith anyone else.</small>
-                    </div>
+                        <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+                     </div>
                     <div class="form-group">
                         <label for="exampleInputpassword">Password</label>
                         <input type="password" class="form-control" id="exampleInput$password" name="password" aria-describedby="emailHelp" placeholder="Passowrd">
+                        <p class="text-danger"><?php echo  "* ". $msg ?></p>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
