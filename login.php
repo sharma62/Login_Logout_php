@@ -1,8 +1,8 @@
 <?php
-session_start();
-include('../database.inc.php');
-include('../function.inc.php');
-$msg = "";
+
+include('connection.php');
+include('function.inc.php');
+
 if (isset($_POST['submit'])) {
     $username = get_safe_value($_POST['username']);
     $password = get_safe_value($_POST['password']);
@@ -33,29 +33,33 @@ if (isset($_POST['submit'])) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Login</title>
 </head>
 
 <body>
-    <form class="dropdown-menu p-4">
-        <div class="form-group">
-            <label for="exampleDropdownFormEmail2">Email address</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Password</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                <label class="form-check-label" for="dropdownCheck2">
-                    Remember me
-                </label>
+     <div class="container text-center">
+        <h1 class="py-4">Login </h1>
+        <hr>
+    </div>
+    <div class="container border py-4 ">
+        <div class="row">
+            <div class="col-lg-4 col-lg-4">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username / Email</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your Uwith anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputpassword">Password</label>
+                        <input type="password" class="form-control" id="exampleInput$password" name="password" aria-describedby="emailHelp" placeholder="Passowrd">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </form>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
+    </div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
