@@ -49,11 +49,11 @@ if (isset($_POST['submit'])) {
                 <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username / Email</label>
-                        <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email">
+                        <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username / Email" required>
                      </div>
                     <div class="form-group">
                         <label for="exampleInputpassword">Password</label>
-                        <input type="password" class="form-control" id="exampleInput$password" name="password" aria-describedby="emailHelp" placeholder="Passowrd">
+                        <input type="password" class="form-control" id="exampleInput$password" name="password" aria-describedby="emailHelp" placeholder="Passowrd" required>
                         <p class="text-danger"><?php echo  "* ". $msg ?></p>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>

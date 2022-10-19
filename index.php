@@ -42,12 +42,12 @@ if (isset($_POST['submit'])) {
                 <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
-                        <input type="name" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+                        <input type="name" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" required>
                     </div>
                     <div class="form-group">
                         <label for="InputQuery1">Query</label>
