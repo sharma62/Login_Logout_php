@@ -3,14 +3,11 @@ include 'connection.php';
 include 'function.inc.php';
 
 if (isset($_POST['submit'])) {
-
-
     $email = get_safe_value($_POST['email']);
     $name = get_safe_value($_POST['name']);
     $query = get_safe_value($_POST['query']);
     (mysqli_query($conn, "INSERT INTO `admin_profile`( `name`, `username`, `password`) VALUES ('$name','$email','$query')")) ? "<script>alert('Successfully send ')</script>" : "    <script>alert(''Failed')</script>";
 }
-
 
 ?>
 
