@@ -2,7 +2,9 @@
 session_start();
 include 'connection.php';
 include 'function.inc.php';
-// if
+if(!($_SESSION['ADMIN_USER'])){
+    redirect('login.php');
+}
  
 if (isset($_POST['submit'])) {
     $email = get_safe_value($_POST['email']);
