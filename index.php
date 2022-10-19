@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
         <h1 class="py-4">Contact To Admin </h1>
         <hr>
         <p><?php echo "Hello ". $_SESSION['ADMIN_USER']?></p>
+        <p> <a href="logout.php">Logout</a></p>
     </div>
 
     <div class="container">
