@@ -1,5 +1,15 @@
 <?php
 include 'connection.php';
+include 'function.inc.php';
+
+if (isset($_POST['submit'])) {
+
+
+    $email = get_safe_value($_POST['email']);
+    $name = get_safe_value($_POST['name']);
+    $query = get_safe_value($_POST['query']);
+    (mysqli_query($conn, "INSERT INTO `admin_profile`( `name`, `username`, `password`) VALUES ('$name','$email','$query')")) ? "<script>alert('Successfully send ')</script>" : "    <script>alert(''Failed')</script>";
+}
 
 
 ?>
@@ -21,9 +31,30 @@ include 'connection.php';
 <body>
 
     <div class="container text-center">
-        <h1 class="py-4">Admin page </h1><hr>
+        <h1 class="py-4">Contact To Admin </h1>
+        <hr>
+    </div>
+    <div class="container">
         <div class="row">
-            <div class="col-md-">
+            <div class="col-lg-8 col-lg-4">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="name" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="InputQuery1">Query</label>
+                        <textarea name="query" cols="30" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group form-check">
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </form>
             </div>
         </div>
     </div>
