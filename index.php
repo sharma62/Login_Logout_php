@@ -2,10 +2,10 @@
 session_start();
 include 'connection.php';
 include 'function.inc.php';
-if(!($_SESSION['ADMIN_USER'])){
+if (!($_SESSION['ADMIN_USER'])) {
     redirect('login.php');
 }
- 
+
 if (isset($_POST['submit'])) {
     $email = get_safe_value($_POST['email']);
     $name = get_safe_value($_POST['name']);
@@ -34,8 +34,10 @@ if (isset($_POST['submit'])) {
     <div class="container text-center">
         <h1 class="py-4">Contact To Admin </h1>
         <hr>
-        <p><?php echo "Hello ". $_SESSION['ADMIN_USER']?></p>
-        <p> <a href="logout.php">Logout</a></p>
+        <div class=" ">
+            <h3><?php echo "Hello " . strtoupper($_SESSION['ADMIN_USER']) ?></h3>
+            <p> <a href="logout.php">Logout</a></p>
+        </div>
     </div>
 
     <div class="container">

@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-group">
                         <label for="exampleInputpassword">Password</label>
                         <input type="password" class="form-control" id="exampleInput$password" name="password" aria-describedby="emailHelp" placeholder="Passowrd" required>
-                        <p class="text-danger"><?php echo  "* ". $msg ?></p>
+                        <p class="text-danger"><?php echo  " ". $msg ?></p>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
