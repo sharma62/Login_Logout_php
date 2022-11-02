@@ -6,3 +6,5 @@ Login &amp; logout page in php. Inside the page put user id and password and. yo
   2. Html 
   3. Css
   4. MySQL
+
+> git clone `git clone ` and hit Enter btn. 
